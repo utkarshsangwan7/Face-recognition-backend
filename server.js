@@ -2,7 +2,7 @@ const express = require('express');
 const Clarifai = require('clarifai'); 
 const bodyParser = require('body-parser');
 const cors = require('cors');
-const bcrypt = require('bcrypt');
+const bcrypt = require('bcrypt-nodejs');
 const app = express();
 const knex = require('knex');
 const saltRounds = 10;
@@ -27,7 +27,7 @@ app.use(bodyParser.json());
 app.use(cors());
 
 app.get('/',(req,res)=>{
-	res.json(database.users);
+	res.json('It is working!!');
 })
 
 app.post('/signin',(req,res)=>{
@@ -140,6 +140,6 @@ app.put('/image',(req,res)=>{
 	});
 })
 
-app.listen(3000,()=>{
-	console.log("The app is currently running on port 3000");
+app.listen(process.env.PORT || 3000,()=>{
+	console.log(`The app is currently running on port 3000`);
 });
