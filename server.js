@@ -61,6 +61,7 @@ app.post('/signin',(req,res)=>{
 
 app.post('/register',(req,res)=>{
 	const {name,email,password} = req.body;
+		res.header("Access-Control-Allow-Origin": "*");
 		if(!name||!email||!password){
 			res.status(400).json('Error in registering!');
 		}else{
@@ -92,9 +93,9 @@ app.post('/register',(req,res)=>{
 						});
 						})
 						.catch(err=>res.status(400).json('Error in registering!'));
+						});
 			});
-		});
-	  }
+	  	}
 	});
 
 app.get('/profile/:id',(req,res)=>{
