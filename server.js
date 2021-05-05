@@ -9,6 +9,9 @@ const saltRounds = 10;
 const myPlaintextPassword = 's0/\/\P4$$w0rD';
 const someOtherPlaintextPassword = 'not_bacon';
 
+app.use(bodyParser.json());
+app.use(cors());
+
 const appp = new Clarifai.App({
  apiKey: '635fbb3235c74b2fb26adcd9dffcded4'
 });
@@ -22,9 +25,6 @@ const db = knex({
 		database: 'smartbrain'
 	}
 });
-
-app.use(bodyParser.json());
-app.use(cors());
 
 app.get('/',(req,res)=>{
 	res.json('It is working!!');
