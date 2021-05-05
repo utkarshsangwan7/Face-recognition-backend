@@ -61,7 +61,6 @@ app.post('/signin',(req,res)=>{
 
 app.post('/register',(req,res)=>{
 	const {name,email,password} = req.body;
-		res.header("Access-Control-Allow-Origin": "*");
 		if(!name||!email||!password){
 			res.status(400).json('Error in registering!');
 		}else{
@@ -83,7 +82,7 @@ app.post('/register',(req,res)=>{
 							    	joined: new Date()
 							    })
 							    .then(user=>{
-							    	res.json(user[0]);
+							    	res..header("Access-Control-Allow-Origin": "*").json(user[0]);
 							    })
 							    .catch(err=>res.status(400).json('Error in registering!'))
 						.then(trx.commit)
