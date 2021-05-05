@@ -19,10 +19,8 @@ const appp = new Clarifai.App({
 const db = knex({
 	client:'pg',
 	connection: {
-		host: 'postgresql-defined-31417',
-		user: 'postgres',
-		password: '2569',
-		database: 'smartbrain'
+		connectionString:process.env.DATABASE_URL,
+		ssl:true
 	}
 });
 
@@ -89,7 +87,7 @@ app.post('/register',(req,res)=>{
 						.catch(err=>{
 							err=>res.status(400).json('Error in registering!');
 							trx.rollback;
-						});
+							});
 						})
 						.catch(err=>res.status(400).json('Error in registering!'));
 						});
