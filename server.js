@@ -82,7 +82,7 @@ app.post('/register',(req,res)=>{
 							    	joined: new Date()
 							    })
 							    .then(user=>{
-							    	res..header("Access-Control-Allow-Origin": "*").json(user[0]);
+							    	res.header("Access-Control-Allow-Origin": "*").json(user[0]);
 							    })
 							    .catch(err=>res.status(400).json('Error in registering!'))
 						.then(trx.commit)
