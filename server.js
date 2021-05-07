@@ -10,18 +10,18 @@ const myPlaintextPassword = 's0/\/\P4$$w0rD';
 const someOtherPlaintextPassword = 'not_bacon';
 
 app.use(bodyParser.json());
-// app.use(cors());
-app.use(cors({ origin: `${process.env.CLIENT_URL}`, credentials: true }));
-app.use((req, res, next) => {
-  res.header("Access-Control-Allow-Origin", `${process.env.CLIENT_URL}`);
-  res.header("Access-Control-Allow-Credentials", true);
-  res.header("Access-Control-Allow-Methods", "GET,PUT,POST,DELETE");
-  res.header(
-    "Access-Control-Allow-Headers",
-    "Origin, X-Requested-With, Content-Type, Accept"
-  );
-  next();
-});
+app.use(cors());
+// app.use(cors({ origin: `${process.env.CLIENT_URL}`, credentials: true }));
+// app.use((req, res, next) => {
+//   res.header("Access-Control-Allow-Origin", `${process.env.CLIENT_URL}`);
+//   res.header("Access-Control-Allow-Credentials", true);
+//   res.header("Access-Control-Allow-Methods", "GET,PUT,POST,DELETE");
+//   res.header(
+//     "Access-Control-Allow-Headers",
+//     "Origin, X-Requested-With, Content-Type, Accept"
+//   );
+//   next();
+// });
 
 const appp = new Clarifai.App({
  apiKey: '635fbb3235c74b2fb26adcd9dffcded4'
