@@ -69,6 +69,7 @@ app.post('/signin',(req,res)=>{
 });
 
 app.post('/register',(req,res)=>{
+	console.log('CHal rha hai!');
 	const {name,email,password} = req.body;
 		if(!name||!email||!password){
 			res.status(400).json('Error in registering!');
