@@ -30,7 +30,7 @@ const appp = new Clarifai.App({
 const db = knex({
 	client:'pg',
 	connection: {
-		connectionString:postgresql-defined-31417,
+		connectionString:process.env.DATABASE_URL,
 		ssl:true
 	}
 });
