@@ -40,7 +40,7 @@ app.post('/signin',(req,res)=>{
 			bcrypt.compare(password, data[0].hash).then(function(result) {
     			if(result)
     			{
-    				return db.select('*').from('users')
+    				return  db.select('*').from('users')
     				.where('email','=',email)
     				.then(user=>{
     					res.json(user[0]);
