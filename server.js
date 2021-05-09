@@ -30,12 +30,14 @@ const appp = new Clarifai.App({
 const db = knex({
 	client:'pg',
 	connection: {
-		// connectionString:process.env.DATABASE_URL
-		// ssl:true
-		host: 'postgresql-defined-31417',
-		user: 'postgres',
-		password: '2569',
-		database: 'smartbrain'
+		connectionString: process.env.DATABASE_URL,
+		 ssl: {
+		    rejectUnauthorized: false
+		  }
+		// host: 'postgresql-defined-31417',
+		// user: 'postgres',
+		// password: '2569',
+		// database: 'smartbrain'
 	}
 });
 
